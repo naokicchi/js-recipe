@@ -37,15 +37,24 @@
       // イベントハンドラ
       button1.onclick = function () {
         label.textContent = "正解"
+        //画像変更
         img.src = baseBallImg
+        //ボタンのdisabledをtrueにして押せなくする
+        button1.disabled = true
       }
       button2.onclick = function () {
         label.textContent = "はずれ　^_^"
+        //画像変更
         img.src = soccerImg
+        //ボタンのdisabledをtrueにして押せなくする
+        button2.disabled = true
       }
       button3.onclick = function () {
         label.textContent = "そんなことできません　^_^"
+        //画像変更
         img.src = basketBallImg
+        //ボタンのdisabledをtrueにして押せなくする
+        button3.disabled = true
       }
     </script>
   </body>
