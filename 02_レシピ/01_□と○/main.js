@@ -9,14 +9,24 @@ const obj = document.getElementById("figure")
 // squareButton.onclick = function () {
 //   obj.classList.remove("rounded")
 // }
-let isCircle = false
+let isCircle = 0
 
 obj.onclick = function () {
-  if (!isCircle) {
-    obj.classList.add("rounded")
-    isCircle = true
-  } else {
-    obj.classList.remove("rounded")
-    isCircle = false
+  switch (isCircle) {
+    case 0:
+      obj.classList.add("rounded")
+      isCircle += 1
+      break
+    case 1:
+      obj.classList.remove("rounded")
+      obj.classList.remove("square")
+      obj.classList.add("triangle")
+      isCircle += 1
+      break
+    case 2:
+      obj.classList.remove("triangle")
+      obj.classList.add("square")
+      isCircle = 0
+      break
   }
 }
