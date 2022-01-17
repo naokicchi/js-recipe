@@ -23,3 +23,28 @@ const fizzBuzz = function (number) {
     }
   }
 }
+
+const like_three = function (number) {
+  for (let n = 1; n <= number; n++) {
+    if (String(n).match("3")) {
+      console.log(`${n}!!!!!!!!!`)
+    } else {
+      console.log(n)
+    }
+  }
+}
+let count = 0
+
+const timeThird = function () {
+  setInterval(countUp, 1000)
+}
+
+const countUp = function () {
+  // count を更新
+  count += 1
+  if (count % 3 === 0) {
+    console.log(`${count}!!!!!!!!!`)
+  } else {
+    console.log(count)
+  }
+}
