@@ -11,7 +11,7 @@
 // }
 
 // //参考記事
-// //https://rurukblog.com/post/Javascript-enter-event/
+// https://rurukblog.com/post/Javascript-enter-event/
 // input.onkeydown = function (event) {
 //   if (event.key === "Enter") {
 //     const card = createCard(input.value)
@@ -20,6 +20,7 @@
 //   }
 // }
 
+//カードを作成
 const createCard = function (text) {
   const card = document.createElement("div")
   card.className = "card"
@@ -41,16 +42,16 @@ const createCard = function (text) {
   return card
 }
 
+//DOMから要素を取得
 const containers = document.getElementsByClassName("cards-container")
 const footer = document.getElementsByClassName("list-footer")
 
+//新たにinputするDivを作成
 const inputDiv = document.createElement("div")
 inputDiv.classList.add("input-container")
 const inputField = document.createElement("input")
-
 inputField.type = "text"
 inputField.className = "input-todo"
-
 inputField.onkeydown = function (event) {
   if (event.key === "Enter") {
     const card = createCard(inputField.value)
@@ -58,12 +59,13 @@ inputField.onkeydown = function (event) {
     inputField.value = ""
   }
 }
-
 const addButton = document.createElement("div")
 addButton.className = "input-button"
 addButton.textContent = "追加"
 addButton.onclick = function () {
   const card = createCard(inputField.value)
+
+  //ここで、containersのどの要素にappendするかをきめるためのインデックスが必要
   containers[selectedFooterTag].append(card)
   inputField.value = ""
 }
@@ -83,7 +85,7 @@ for (let i = 0; i < footer.length; i++) {
 for (let i = 0; i < footer.length; i++) {
   footer[i].addEventListener("mouseout", function () {
     if (i !== selectedFooterTag) {
-      inputField.value = ""
+      inputField.value = null
     }
     selectedFooterTag = i
   })
