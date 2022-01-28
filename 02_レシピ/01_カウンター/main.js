@@ -14,74 +14,111 @@ const waru = document.getElementById("waru")
 const ac = document.getElementById("ac")
 const equal = document.getElementById("equal")
 const ansLabel = document.getElementById("answer")
+const kigou = document.getElementsByClassName("kigou")
 
-let ans = 0
-var calc_string = ""
-//var result = Function("return (" + calc_string + ");")()
+let calc_string = String()
+let isLastNumber = true
 
-//答え更新する関数
-
-//ansLabel.textContent = 0
+const check = function () {
+  for (let i = 0; i < 10; i++) {
+    if (calc_string.slice(-1) != i) {
+      console.log(false, "24")
+      isLastNumber = false
+      equal.disabled = true
+    } else {
+      console.log(true, "27")
+      isLastNumber = true
+      equal.disabled = false
+      return
+    }
+  }
+}
+if (calc_string.length === 0) {
+  kigou.disabled = true
+}
 
 ichi.onclick = function () {
   calc_string += 1
+  check()
   console.log(calc_string)
 }
 ni.onclick = function () {
   calc_string += 2
+  check()
   console.log(calc_string)
 }
 san.onclick = function () {
   calc_string += 3
+  check()
   console.log(calc_string)
 }
 yon.onclick = function () {
   calc_string += 4
+  check()
   console.log(calc_string)
 }
 
 go.onclick = function () {
   calc_string += 5
+  check()
   console.log(calc_string)
 }
 roku.onclick = function () {
   calc_string += 6
+  check()
   console.log(calc_string)
 }
 nana.onclick = function () {
   calc_string += 7
+  check()
   console.log(calc_string)
 }
 hachi.onclick = function () {
   calc_string += 8
+  check()
   console.log(calc_string)
 }
 
 kyuu.onclick = function () {
   calc_string += 9
+  check()
   console.log(calc_string)
 }
 
 kakeru.onclick = function () {
-  calc_string += "*"
+  if (isLastNumber === true) {
+    calc_string += "*"
+  }
+  check()
   console.log(calc_string)
 }
 mainasu.onclick = function () {
-  calc_string += "-"
+  if (isLastNumber === true) {
+    calc_string += "-"
+  }
+  check()
   console.log(calc_string)
 }
 purasu.onclick = function () {
-  calc_string += "+"
+  if (isLastNumber === true) {
+    calc_string += "+"
+  }
+  check()
   console.log(calc_string)
 }
 waru.onclick = function () {
-  calc_string += "/"
+  if (isLastNumber === true) {
+    calc_string += "/"
+  }
+  check()
   console.log(calc_string)
 }
 ac.onclick = function () {
-  calc_string = ""
+  calc_string = String()
+  isLastNumber = false
   console.log(calc_string)
   ansLabel.textContent = 0
+  equal.disabled = true
 }
 equal.onclick = function () {
   //ans = eval(calc_string)
