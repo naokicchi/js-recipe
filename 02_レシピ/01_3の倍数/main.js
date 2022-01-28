@@ -34,17 +34,24 @@ const like_three = function (number) {
   }
 }
 let count = 0
+let maxValue = 0
 
-const timeThird = function () {
-  setInterval(countUp, 1000)
+const timerId = function (number) {
+  maxValue = number
+  //setIntervalの引数の関数は引数をもつことができない説？？？？？？
+  setInterval(judgeNumber, 1000)
 }
 
-const countUp = function () {
-  // count を更新
+const judgeNumber = function () {
   count += 1
-  if (count % 3 === 0) {
-    console.log(`${count}!!!!!!!!!`)
+  if (count > maxValue) {
+    //setIntervalを停止
+    clearInterval(timerId)
   } else {
-    console.log(count)
+    if (count % 3 === 0) {
+      console.log(`${count}!!!!!!!!!`)
+    } else {
+      console.log(count)
+    }
   }
 }

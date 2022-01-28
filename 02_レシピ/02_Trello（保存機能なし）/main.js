@@ -28,17 +28,13 @@ const createCard = function (text) {
   const toDo = document.createElement("div")
   toDo.className = "toDo"
   toDo.textContent = text
-
   card.append(toDo)
-
   const deleteButton = document.createElement("div")
   deleteButton.className = "delete"
-
   deleteButton.onclick = function () {
     card.remove()
   }
   card.append(deleteButton)
-
   return card
 }
 
@@ -59,22 +55,21 @@ inputField.onkeydown = function (event) {
     inputField.value = ""
   }
 }
+
 const addButton = document.createElement("div")
 addButton.className = "input-button"
 addButton.textContent = "追加"
 addButton.onclick = function () {
   const card = createCard(inputField.value)
-
   //ここで、containersのどの要素にappendするかをきめるためのインデックスが必要
   containers[selectedFooterTag].append(card)
-  inputField.value = ""
+  inputField.value = null
 }
 
 inputDiv.append(inputField)
 inputDiv.append(addButton)
 
 let selectedFooterTag = 0
-
 for (let i = 0; i < footer.length; i++) {
   footer[i].addEventListener("mouseover", function () {
     //onsole.log(i)
