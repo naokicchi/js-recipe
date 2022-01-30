@@ -57,6 +57,7 @@
       }
       sortButton.onclick = function () {
         memos.sort()
+        localStorage.memos = JSON.stringify(memos)
         createDiv()
       }
     </script>
