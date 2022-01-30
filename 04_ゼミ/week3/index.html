@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const aisatsu = ["おはよう", "こんにちは", "こんばんは"]
+      //console.log(aisatsu[1])
+
+      // 配列.include[""]  → 文字列が含まれるかどうか判断する
+      //　配列.push("") ""の要素を追加
+
+      //ローカルストレージとは、、
+      //ブラウザに文字列を保存する機能(オブジェクト)
+      const Name = localStorage.name
+      console.log(Name)
+
+      localStorage.name = "なおき"
+
+      const Memos = ["おはよう", "こんにちは"]
+      localStorage.memos = Memos
+      console.log(Memos)
+      console.log(localStorage.memos)
+
+      //JSONをつかってローカルストレージ→→配列のようになる
+      localStorage.memos = JSON.stringify(Memos)
+      console.log(localStorage.memos)
+
+      //json形式のものを取得
+      const jsonbackMemos = JSON.parse(localStorage.memos)
+      console.log(jsonbackMemos)
+    </script>
+  </body>
+</html>

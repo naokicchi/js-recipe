@@ -33,6 +33,7 @@ const check = function () {
     }
   }
 }
+
 if (calc_string.length === 0) {
   kigou.disabled = true
 }
@@ -41,48 +42,59 @@ ichi.onclick = function () {
   calc_string += 1
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
+
 ni.onclick = function () {
   calc_string += 2
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
+
 san.onclick = function () {
   calc_string += 3
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 yon.onclick = function () {
   calc_string += 4
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 
 go.onclick = function () {
   calc_string += 5
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 roku.onclick = function () {
   calc_string += 6
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 nana.onclick = function () {
   calc_string += 7
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 hachi.onclick = function () {
   calc_string += 8
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 
 kyuu.onclick = function () {
   calc_string += 9
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 
 kakeru.onclick = function () {
@@ -91,6 +103,7 @@ kakeru.onclick = function () {
   }
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 mainasu.onclick = function () {
   if (isLastNumber === true) {
@@ -98,6 +111,7 @@ mainasu.onclick = function () {
   }
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 purasu.onclick = function () {
   if (isLastNumber === true) {
@@ -105,12 +119,14 @@ purasu.onclick = function () {
   }
   check()
   console.log(calc_string)
+  ansLabel.textContent = calc_string
 }
 waru.onclick = function () {
   if (isLastNumber === true) {
     calc_string += "/"
   }
   check()
+  ansLabel.textContent = calc_string
   console.log(calc_string)
 }
 ac.onclick = function () {
