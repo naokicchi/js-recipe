@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue自動販売機</title>
+  </head>
+  <body>
+    <section id="atmApp">
+      <h1>入力画面</h1>
+      <input type="text" v-model="inputMoney" />
+      <div>入力額 {{inputMoney}}円</div>
+      <button v-on:click="input">入金</button>
+      <button v-on:click="output" v-bind:disabled="enableClass">出金</button>
+
+      <h1>口座残高</h1>
+      <div>残高: {{amountMoney}}円</div>
+
+      <h1>取引記録</h1>
+      <div id="trade-record">記録</div>
+      <div v-for="log in records">
+        <div>日付:{{log.date}}</div>
+        <div>操作:{{log.type}}</div>
+        <div>金額:{{log.money}}円</div>
+        <br />
+      </div>
+    </section>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
