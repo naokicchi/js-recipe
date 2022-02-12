@@ -19,10 +19,12 @@ Vue.createApp({
     input: function () {
       this.amountMoney += Number(this.inputMoney)
       this.makeRecord("入金")
+      this.inputMoney = 0
     },
     output: function () {
       this.amountMoney -= Number(this.inputMoney)
       this.makeRecord("出金")
+      this.inputMoney = 0
     },
     makeRecord: function (play) {
       if (this.inputMoney !== "" && this.inputMoney !== 0) {
